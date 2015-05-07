@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/header'); ?> 
+<?php $this->load->view('secret/header'); ?> 
 
 <div class="span9">
 <?php if(isset($info)) : ?>
@@ -20,32 +20,44 @@
 	<div class="widget">
 	    <div class="widget-header">
 		<i class="icon-th"></i>
-		<h3>Ubah Channel</h3>                
+		<h3>Ubah Lowongan</h3>                
 	    </div> <!-- /widget-header -->
 	    
 	    <div class="widget-content">
 		<div class="widget-content">
-		    <?php echo form_open('admin/channel/editp','class="form-horizontal"'); ?>
+		    <?php echo form_open('secret/loker/editp','class="form-horizontal"'); ?>
 		    <fieldset>			    
 			<div class="control-group">											
-			    <label class="control-label" for="nama">Nama Channel</label>
+			    <label class="control-label" for="judul">Judul</label>
 			    <div class="controls">
-				    <input type="text" class="input-medium span4" name="nama" value="<?php echo $channel->nama; ?>" />
-				    <?php echo form_error('nama','<div style="color:red">','</div>'); ?>
+				    <input type="text" class="input-medium span4" name="judul" value="<?php echo $loker->judul; ?>" />
+				    <?php echo form_error('judul','<div style="color:red">','</div>'); ?>
 			    </div> <!-- /controls -->
 			</div>
+			<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+			<script type="text/javascript">
+			tinymce.init({
+				selector: "textarea",
+				plugins: [
+					"advlist autolink lists link image charmap print preview anchor",
+					"searchreplace visualblocks code fullscreen",
+					"insertdatetime media table contextmenu paste"
+				],
+				toolbar: "undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+			});
+			</script>
 			<div class="control-group">											
 			    <label class="control-label" for="deskripsi">Deskripsi</label>
 			    <div class="controls">
-				    <textarea name="deskripsi" class="span4"><?php echo $channel->deskripsi; ?></textarea>
+				    <textarea name="deskripsi" class="span4" rows="10"><?php echo $loker->deskripsi; ?></textarea>
 				    <?php echo form_error('deskripsi','<div style="color:red">','</div>'); ?>
 			    </div> <!-- /controls -->
 			</div>
 			<div class="control-group">											
-			    <label class="control-label" for="web">Website</label>
+			    <label class="control-label" for="tag">Tag</label>
 			    <div class="controls">
-				    <input type="text" class="input-medium span4" name="web" value="<?php echo $channel->website; ?>" placeholder="http://" />
-				    <?php echo form_error('web','<div style="color:red">','</div>'); ?>
+				    <input type="text" class="input-medium span4" name="tag" value="<?php echo $loker->tag; ?>" placeholder="http://" />
+				    <?php echo form_error('tag','<div style="color:red">','</div>'); ?>
 			    </div> <!-- /controls -->
 			</div>
 			<div class="control-group">
@@ -54,7 +66,7 @@
 			    </div>
 			</div>
 		    </fieldset>
-		    <?php echo form_hidden('cid',$channel->cid); ?>
+		    <?php echo form_hidden('lid',$loker->lid); ?>
 		    <?php echo form_close(); ?>
 		</div>
 	    </div> <!-- /widget-header -->                                            
@@ -62,4 +74,4 @@
     </div> <!-- /span9 -->	
 </div> <!-- /row -->
 			
-<?php $this->load->view('admin/footer'); ?>
+<?php $this->load->view('secret/footer'); ?>

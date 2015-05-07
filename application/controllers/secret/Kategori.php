@@ -15,7 +15,7 @@ class Kategori extends CI_Controller {
                 
         $total = $this->ktm->countAllKategori();                
         $this->load->library('pagination');
-        $config["base_url"] = site_url('admin/kategori/index');
+        $config["base_url"] = site_url('secret/kategori/index');
         $config["total_rows"] = $total;
         $config["per_page"] = 20;
         $config["uri_segment"] = 4;
@@ -26,7 +26,7 @@ class Kategori extends CI_Controller {
             $data['info'] = $this->session->flashdata('info');
         if($this->session->flashdata('error'))
             $data['error'] = $this->session->flashdata('error');
-        $this->load->view('admin/kategori_view',$data);
+        $this->load->view('secret/kategori_view',$data);
     }
     
     public function tambah()
@@ -34,7 +34,7 @@ class Kategori extends CI_Controller {
         $data['menu'] = 'Kategori';
         $username = $this->session->userdata('username');
         $data['user'] = $this->usm->getUserDetail($username);
-        $this->load->view('admin/kategoritambah_view',$data);
+        $this->load->view('secret/kategoritambah_view',$data);
     }
     
     public function tambahp()
@@ -53,18 +53,18 @@ class Kategori extends CI_Controller {
                 else{
                     $this->session->set_flashdata('error','Data Gagal ditambahkan');
                 }
-                redirect('admin/kategori','refresh');
+                redirect('secret/kategori','refresh');
             }
             else{
                 $data['menu'] = 'Kategori';
                 $username = $this->session->userdata('username');
                 $data['user'] = $this->usm->getUserDetail($username);
                 $data['error'] = 'Terdapat beberapa kesalahan dalam pengisian data';
-                $this->load->view('admin/kategoritambah_view',$data);
+                $this->load->view('secret/kategoritambah_view',$data);
             }
         }
         else{
-            redirect('admin/kategori','refresh');
+            redirect('secret/kategori','refresh');
         }
     }
     
@@ -74,7 +74,7 @@ class Kategori extends CI_Controller {
         $username = $this->session->userdata('username');
         $data['user'] = $this->usm->getUserDetail($username);
         $data['kategori'] = $this->ktm->getKategoriDetil($kid);
-        $this->load->view('admin/kategoriedit_view',$data);
+        $this->load->view('secret/kategoriedit_view',$data);
     }
     
     public function editp()
@@ -87,14 +87,14 @@ class Kategori extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
             $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required');
-	    if ($this->form_validation->run()){
+			if ($this->form_validation->run()){
                 if($this->ktm->editdata($nm,$ds,$id)){
                     $this->session->set_flashdata('info','Data Berhasil diubah');
                 }
                 else{
                     $this->session->set_flashdata('error','Data Gagal diubah');
                 }
-                redirect('admin/kategori','refresh');
+                redirect('secret/kategori','refresh');
             }
             else{
                 $data['menu'] = 'Kategori';
@@ -102,11 +102,11 @@ class Kategori extends CI_Controller {
                 $data['user'] = $this->usm->getUserDetail($username);
                 $data['kategori'] = $this->ktm->getKategoriDetil($id);
                 $data['error'] = 'Terdapat beberapa kesalahan dalam pengisian data';
-                $this->load->view('admin/kategoriedit_view',$data);
+                $this->load->view('secret/kategoriedit_view',$data);
             }
         }
         else{
-            redirect('admin/kategori','refresh');
+            redirect('secret/kategori','refresh');
         }
     }
     
@@ -119,6 +119,6 @@ class Kategori extends CI_Controller {
         else{
             $this->session->set_flashdata('error','Data Gagal dihapus');
         }
-        redirect('admin/kategori','refresh');
+        redirect('secret/kategori','refresh');
     }
 }

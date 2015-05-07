@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/header'); ?> 
+<?php $this->load->view('secret/header'); ?> 
 
 <div class="span9">
 <?php if(isset($info)) : ?>
@@ -20,31 +20,31 @@
         <div class="widget">
             <div class="widget-header">
                 <i class="icon-th"></i>
-                <h3>Channel</h3>
-                <span style="float: right; padding-right: 10px;"><a title="Tambah Channel" href="<?php echo site_url('admin/channel/tambah'); ?>" class="btn btn-small"><i class="icon-plus" style="margin-left: 0px; margin-right: 3px;"></i> Tambah</a></span>
+                <h3>Lowongan</h3>
+                <span style="float: right; padding-right: 10px;"><a title="Tambah Lowongan" href="<?php echo site_url('secret/loker/tambah'); ?>" class="btn btn-small"><i class="icon-plus" style="margin-left: 0px; margin-right: 3px;"></i> Tambah</a></span>
             </div> <!-- /widget-header -->
             
             <div class="widget-content">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Nama</th>
+                            <th>Judul</th>
                             <th width="40%">Deskripsi</th>
-                            <th>Website</th>                            
+                            <th>Tag</th>                            
                             <th width="15%">&nbsp;</th>
                         </tr>
                     </thead>
                     
                     <tbody>
-                    <?php if($channel->num_rows() > 0) : ?>
-                    <?php foreach($channel->result() as $ch) : ?>                    
+                    <?php if($loker->num_rows() > 0) : ?>
+                    <?php foreach($loker->result() as $lk) : ?>                    
                     <tr>
-                        <td><?php echo $ch->nama; ?></td>
-                        <td><?php echo $ch->deskripsi; ?></td>
-                        <td><?php echo $ch->website; ?></td>                        
+                        <td><?php echo $lk->judul; ?></td>
+                        <td><?php echo word_limiter($lk->deskripsi,25); ?></td>
+                        <td><?php echo $lk->tag; ?></td>                        
                         <td class="action-td">                            
-                            <a title="edit" href="<?php echo site_url('admin/channel/edit/'.$ch->cid); ?>" class="btn btn-small"><i class="icon-edit"></i></a>
-                            <a title="delete" href="<?php echo site_url('admin/channel/delete/'.$ch->cid); ?>" class="btn btn-small btn-warning"><i class="icon-remove"></i></a>
+                            <a title="edit" href="<?php echo site_url('secret/loker/edit/'.$lk->lid); ?>" class="btn btn-small"><i class="icon-edit"></i></a>
+                            <a title="delete" href="<?php echo site_url('secret/loker/delete/'.$lk->lid); ?>" class="btn btn-small btn-warning"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -57,4 +57,4 @@
     </div> <!-- /span9 -->	
 </div> <!-- /row -->
 			
-<?php $this->load->view('admin/footer'); ?>
+<?php $this->load->view('secret/footer'); ?>

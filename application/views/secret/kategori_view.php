@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/header'); ?> 
+<?php $this->load->view('secret/header'); ?> 
 
 <div class="span9">
 <?php if(isset($info)) : ?>
@@ -21,7 +21,7 @@
             <div class="widget-header">
                 <i class="icon-list"></i>
                 <h3>Kategori</h3>
-                <span style="float: right; padding-right: 10px;"><a title="Tambah Kategori" href="<?php echo site_url('admin/kategori/tambah'); ?>" class="btn btn-small"><i class="icon-plus" style="margin-left: 0px; margin-right: 3px;"></i> Tambah</a></span>
+                <span style="float: right; padding-right: 10px;"><a title="Tambah Kategori" href="<?php echo site_url('secret/kategori/tambah'); ?>" class="btn btn-small"><i class="icon-plus" style="margin-left: 0px; margin-right: 3px;"></i> Tambah</a></span>
             </div> <!-- /widget-header -->
             
             <div class="widget-content">
@@ -41,8 +41,8 @@
                         <td><?php echo $kt->nama; ?></td>
                         <td><?php echo $kt->deskripsi; ?></td>                       
                         <td class="action-td">                            
-                            <a title="edit" href="<?php echo site_url('admin/kategori/edit/'.$kt->kid); ?>" class="btn btn-small"><i class="icon-edit"></i></a>
-                            <a title="delete" href="<?php echo site_url('admin/kategori/delete/'.$kt->kid); ?>" class="btn btn-small btn-warning"><i class="icon-remove"></i></a>
+                            <a title="edit" href="<?php echo site_url('secret/kategori/edit/'.$kt->kid); ?>" class="btn btn-small"><i class="icon-edit"></i></a>
+                            <a title="delete" href="<?php echo site_url('secret/kategori/delete/'.$kt->kid); ?>" class="btn btn-small btn-warning"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -55,4 +55,4 @@
     </div> <!-- /span9 -->	
 </div> <!-- /row -->
 			
-<?php $this->load->view('admin/footer'); ?>
+<?php $this->load->view('secret/footer'); ?>

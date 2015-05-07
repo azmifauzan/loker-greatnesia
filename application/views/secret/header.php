@@ -93,7 +93,7 @@
 			  Kategori	
 		  </a>
 	  </li>
-	  
+	  	  
 	  <li <?php if($menu == 'Loker') echo 'class="active"'; ?>>
 		  <a href="<?php echo site_url('secret/loker'); ?>">
 			  <i class="icon-star"></i>
@@ -102,7 +102,7 @@
 	  </li>
 	  	  	  	  
 	  <li>
-		  <a href="<?php echo site_url('admin/login/out'); ?>">
+		  <a href="<?php echo site_url('secret/login/out'); ?>">
 			  <i class="icon-off"></i>
 			  Logout	
 		  </a>

@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/header'); ?> 
+<?php $this->load->view('secret/header'); ?> 
 
 <div class="span9">
 <?php if(isset($info)) : ?>
@@ -25,7 +25,7 @@
 	    
 	    <div class="widget-content">
 		<div class="widget-content">
-		    <?php echo form_open('admin/kategori/tambahp','class="form-horizontal"'); ?>
+		    <?php echo form_open('secret/kategori/tambahp','class="form-horizontal"'); ?>
 		    <fieldset>			    
 			<div class="control-group">											
 			    <label class="control-label" for="nama">Nama Kategori</label>
@@ -54,4 +54,4 @@
     </div> <!-- /span9 -->	
 </div> <!-- /row -->
 			
-<?php $this->load->view('admin/footer'); ?>
+<?php $this->load->view('secret/footer'); ?>
