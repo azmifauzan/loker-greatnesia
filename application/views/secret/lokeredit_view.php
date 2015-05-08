@@ -34,6 +34,17 @@
 				    <?php echo form_error('judul','<div style="color:red">','</div>'); ?>
 			    </div> <!-- /controls -->
 			</div>
+			<div class="control-group">										
+			    <label class="control-label" for="kategori">Kategori</label>
+			    <div class="controls">
+				    <select name="kategori" class="span2">
+					<?php foreach($kategori->result() as $kt) : ?>
+					<option value="<?php echo $kt->kid; ?>" <?php if($kt->kid == $loker->kid) echo "selected"; ?>><?php echo $kt->nama; ?></option>
+					<?php endforeach; ?>
+				    </select>
+				    <?php echo form_error('kategori','<div style="color:red">','</div>'); ?>
+			    </div> <!-- /controls -->
+			</div>
 			<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 			<script type="text/javascript">
 			tinymce.init({

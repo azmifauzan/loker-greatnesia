@@ -50,12 +50,13 @@ class Loker extends CI_Controller {
             $ds = $this->input->post('deskripsi');
             $tg = $this->input->post('tag');
 			$us = $this->session->userdata('username');
+			$kt = $this->input->post('kategori');
             $this->load->library('form_validation');
             $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
             $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required');
 			$this->form_validation->set_rules('tag', 'Tag', 'trim|required');
             if ($this->form_validation->run()){
-                if($this->lkm->tambahdata($jd,$ds,$tg,$us)){
+                if($this->lkm->tambahdata($jd,$kt,$ds,$tg,$us)){
                     $this->session->set_flashdata('info','Data Berhasil ditambahkan');
                 }
                 else{
@@ -82,6 +83,7 @@ class Loker extends CI_Controller {
         $username = $this->session->userdata('username');
         $data['user'] = $this->usm->getUserDetail($username);
         $data['loker'] = $this->lkm->getLokerDetil($lid);
+		$data['kategori'] = $this->lkm->getAllKategori();
         $this->load->view('secret/lokeredit_view',$data);
     }
     
@@ -93,12 +95,13 @@ class Loker extends CI_Controller {
             $ds = $this->input->post('deskripsi');
             $tg = $this->input->post('tag');
             $id = $this->input->post('lid');
+			$kt = $this->input->post('kategori');
             $this->load->library('form_validation');
             $this->form_validation->set_rules('judul', 'Judul', 'trim|required');
             $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'trim|required');
 			$this->form_validation->set_rules('tag', 'Tag', 'trim|required');
             if ($this->form_validation->run()){
-                if($this->lkm->editdata($jd,$ds,$tg,$id)){
+                if($this->lkm->editdata($jd,$kt,$ds,$tg,$id)){
                     $this->session->set_flashdata('info','Data Berhasil diubah');
                 }
                 else{
@@ -111,6 +114,7 @@ class Loker extends CI_Controller {
                 $username = $this->session->userdata('username');
                 $data['user'] = $this->usm->getUserDetail($username);
                 $data['loker'] = $this->lkm->getLokerDetil($id);
+				$data['kategori'] = $this->lkm->getAllKategori();
                 $data['error'] = 'Terdapat beberapa kesalahan dalam pengisian data';
                 $this->load->view('secret/lokeredit_view',$data);
             }

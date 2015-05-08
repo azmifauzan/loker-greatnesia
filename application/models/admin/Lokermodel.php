@@ -22,10 +22,11 @@ class Lokermodel extends CI_Model{
         return $this->db->get('kategori');
     }
     
-    public function tambahdata($jd,$ds,$tg,$us)
+    public function tambahdata($jd,$kt,$ds,$tg,$us)
     {
         $data = array(
             'judul' => $jd,
+            'kid' => $kt,
             'deskripsi' => $ds,
             'tag' => $tg,
             'uploader' => $us,
@@ -41,10 +42,11 @@ class Lokermodel extends CI_Model{
         return $this->db->get('lowongan')->row();
     }
     
-    public function editdata($jd,$ds,$tg,$id)
+    public function editdata($jd,$kt,$ds,$tg,$id)
     {
         $data = array(
             'judul' => $jd,
+            'kid' => $kt,
             'deskripsi' => $ds,
             'tag' => $tg
         );

@@ -2,5 +2,6 @@
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="63c2a495-dd75-4173-9b10-5effb74d0bf8" kpf_version="5" name="loker-greatnesia.komodoproject">
 <preference-set idref="63c2a495-dd75-4173-9b10-5effb74d0bf8" id="project" preftype="project">
+  <long id="prefs_version">1</long>
 </preference-set>
 </project>
