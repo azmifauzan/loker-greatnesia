@@ -47,7 +47,7 @@
           <div class="logo">
             <div class="logo-image">
               <!-- Image link -->
-              <a href="index.html"><i class="icon-camera blue"></i></a>
+              <a href="index.html"><i class="icon-briefcase blue"></i></a>
             </div>
             <div class="logo-text">
               <h1><a href="index.html">Lowongan<span class="lightblue">Kerja</span></a></h1>
@@ -70,21 +70,17 @@
               <!-- Main navigation -->
               <!-- Use the background color class in anchor tag for colorful menu -->
               <ul>
-                <li><a href="index.html" class="blightblue"> <i class="icon-home"></i> Home</a></li>
+                <li><a href="<?php echo base_url(); ?>" class="borange"> <i class="icon-home"></i> Home</a></li>
                 <li><a href="#" rel="ddsubmenu2" class="bred"> <i class="icon-desktop"></i> Lowongan</a>
                 <!-- Sub Navigation -->
                     <ul id="ddsubmenu2" class="ddsubmenustyle">
-                       <li><a href="404.html">404</a></li>
-                       <li><a href="testimonials.html">Testimonials</a></li>
-                       <li><a href="clients.html">Clients</a></li>
-                       <li><a href="pricingtable.html">Pricing Table</a></li>
-                       <li><a href="projects.html">Projects</a></li>
-                       <li><a href="register.html">Register</a></li>
-                       <li><a href="login.html">Login</a></li>
-                       <li><a href="events.html">Events</a></li>
+                      <?php foreach($kategori->result() as $kt) : ?>
+                        <li><?php echo anchor('home/kategori/'.$kt->kid.'/'.url_title(strtolower($kt->nama)),$kt->nama); ?></li>
+                      <?php endforeach; ?>
                     </ul>
                 <!-- Sub Navigation -->
-                <li><a href="contactus.html" class="bviolet"> <i class="icon-envelope-alt"></i> Contact</a></li>
+                <li><a href="http://www.greatnesia.com/about/" class="bviolet" target="_blank"> <i class="icon-user"></i> About</a></li>
+                <li><a href="http://www.greatnesia.com/contact-us/" class="blightblue" target="_blank"> <i class="icon-envelope-alt"></i> Contact</a></li>
               </ul>
             </div>
           </div>

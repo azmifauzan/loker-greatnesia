@@ -5,13 +5,12 @@
     <div class="row">
       <div class="span12 copy">
         <div class="span9">
-            <p>Copyright &copy; <a href="#">Your Site</a> - <a href="index.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="contactus.html">Contact Us</a></p>
+            <p>Copyright &copy; <a href="#">Greatnesia.com</a> - <a href="<?php echo base_url(); ?>">Home</a> | <a href="http://www.greatnesia.com/about/" target="_blank">About Us</a> | <a href="http://www.greatnesia.com/contact-us/" target="_blank">Contact Us</a></p>
         </div>
         <div class="social span2" align="right">
             <!-- Social media icons. Repalce # with your profile links -->
-            <a href="#" class="bblue"><i class="icon-facebook"></i></a>
-            <a href="#" class="borange"><i class="icon-google-plus"></i></a> 
-            <a href="#" class="blightblue"><i class="icon-twitter"></i></a>
+            <a href="https://www.facebook.com/Greatnesia" class="bblue"><i class="icon-facebook"></i></a>
+            <a href="https://twitter.com/greatnesia" class="blightblue"><i class="icon-twitter"></i></a>
         </div>
     </div>
     </div>    

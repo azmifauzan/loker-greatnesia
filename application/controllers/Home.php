@@ -6,10 +6,39 @@ class Home extends CI_Controller{
         $this->load->model('homemodel','hmm');
     }
     
-    public function index()
+    public function index($off = 0)
     {
+        $total = $this->hmm->countAllLoker();
+        $this->load->library('pagination');
+        $config["base_url"] = site_url('home/index');
+        $config["total_rows"] = $total;
+        $config["per_page"] = 20;
+        $config["uri_segment"] = 3;
+        $this->pagination->initialize($config);
+        
         $this->load->helper('text');
-        $data["loker"] = $this->hmm->getAllLoker();
+        $data["judul"] = "Home";
+        $data["subjudul"] = "Lowongan Terbaru";
+        $data["loker"] = $this->hmm->getAllLoker($config['per_page'],$off);
+        $data["kategori"] = $this->hmm->getAllKategori();
+        $this->load->view('home_view',$data);
+    }
+    
+    public function kategori($kid, $off = 0)
+    {
+        $total = $this->hmm->countAllLokerKategori($kid);
+        $this->load->library('pagination');
+        $config["base_url"] = site_url('home/kategori/'.$kid);
+        $config["total_rows"] = $total;
+        $config["per_page"] = 20;
+        $config["uri_segment"] = 4;
+        $this->pagination->initialize($config);
+        
+        $this->load->helper('text');
+        $kat = $this->hmm->getKategoriDetil($kid);
+        $data["judul"] = $kat->nama;
+        $data["subjudul"] = "Lowongan Terbaru";
+        $data["loker"] = $this->hmm->getAllLokerByKategori($kid,$config['per_page'],$off);
         $data["kategori"] = $this->hmm->getAllKategori();
         $this->load->view('home_view',$data);
     }
