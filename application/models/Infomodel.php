@@ -24,6 +24,7 @@ class Infomodel extends CI_Model
     public function getLokerTerbaru($jum,$ex)
     {
         $this->db->where('status',1);
+        $this->db->order_by('upload_time','desc');
         $this->db->limit($jum);
         $this->db->where('lid !=',$ex);
         return $this->db->get('lowongan');

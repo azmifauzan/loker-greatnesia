@@ -41,10 +41,10 @@
                 <div class="clearfix"></div>
 
               </div>
-
+              
             </div>
             
-            <div class="span7 service-list">
+            <div class="span6 service-list">
                 <?php $icon = array('','desktop','fire','globe','credit-card','briefcase'); ?>
                 <?php foreach($loker->result() as $lk) : ?>
                 <div class="service-icon">
@@ -62,8 +62,22 @@
             </div>
 
             <!-- Spot iklan -->
-            <div class="span2">
-              
+            <div class="span3">
+              <div class="widget">
+                <h4>Langganan Email</h4>
+                <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=loker-greatnesia', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p style="line-height: normal;">Kami akan mengirimkan info lowongan terbaru ke email Anda:</p><p><input type="text" style="width:200px" name="email" placeholder="alamat email"/><br/><input type="submit" value="Berlangganan" /></p><input type="hidden" value="loker-greatnesia" name="uri"/><input type="hidden" name="loc" value="en_US"/></form>
+              </div>
+              <div>
+            	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- loker-greatnesia -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:600px"
+                     data-ad-client="ca-pub-1468027569491883"
+                     data-ad-slot="1166578458"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </div>
             </div>
           </div>          
       </div>

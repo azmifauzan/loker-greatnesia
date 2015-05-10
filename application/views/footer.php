@@ -11,6 +11,7 @@
             <!-- Social media icons. Repalce # with your profile links -->
             <a href="https://www.facebook.com/Greatnesia" class="bblue"><i class="icon-facebook"></i></a>
             <a href="https://twitter.com/greatnesia" class="blightblue"><i class="icon-twitter"></i></a>
+            <a href="<?php echo site_url('feed'); ?>" class="borange"><i class="icon-rss"></i></a>
         </div>
     </div>
     </div>    

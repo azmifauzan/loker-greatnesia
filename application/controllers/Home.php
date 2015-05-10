@@ -12,8 +12,12 @@ class Home extends CI_Controller{
         $this->load->library('pagination');
         $config["base_url"] = site_url('home/index');
         $config["total_rows"] = $total;
-        $config["per_page"] = 20;
+        $config["per_page"] = 10;
         $config["uri_segment"] = 3;
+        $config["full_tag_open"] = '<div class="paging">';        
+        $config["full_tag_close"] = '</div>';
+        $config['cur_tag_open'] = '<span class="current">';
+        $config['cur_tag_close'] = '</span>';
         $this->pagination->initialize($config);
         
         $this->load->helper('text');
@@ -30,8 +34,12 @@ class Home extends CI_Controller{
         $this->load->library('pagination');
         $config["base_url"] = site_url('home/kategori/'.$kid);
         $config["total_rows"] = $total;
-        $config["per_page"] = 20;
+        $config["per_page"] = 10;
         $config["uri_segment"] = 4;
+        $config["full_tag_open"] = '<div class="paging">';        
+        $config["full_tag_close"] = '</div>';
+        $config['cur_tag_open'] = '<span class="current">';
+        $config['cur_tag_close'] = '</span>';
         $this->pagination->initialize($config);
         
         $this->load->helper('text');

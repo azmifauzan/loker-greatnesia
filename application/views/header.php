@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
-
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed loker.greatnesia.com" href="<?php echo site_url('feed'); ?>" />
   <!-- Stylesheets -->
   <!-- Bootstrap -->
   <link href="<?php echo base_url('style/bootstrap.css'); ?>" rel="stylesheet">
@@ -47,10 +47,10 @@
           <div class="logo">
             <div class="logo-image">
               <!-- Image link -->
-              <a href="index.html"><i class="icon-briefcase blue"></i></a>
+              <a href="<?php echo base_url(); ?>"><i class="icon-briefcase blue"></i></a>
             </div>
             <div class="logo-text">
-              <h1><a href="index.html">Lowongan<span class="lightblue">Kerja</span></a></h1>
+              <h1><a href="<?php echo base_url(); ?>">Lowongan<span class="lightblue">Kerja</span></a></h1>
               <div class="logo-meta">Greatnesia.com</div>
             </div>
 
