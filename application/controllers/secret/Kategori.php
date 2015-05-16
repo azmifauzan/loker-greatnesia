@@ -3,6 +3,9 @@ class Kategori extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+		if($this->session->userdata('isLoginAdmin') != TRUE)
+            redirect('secret/login','refresh');
+			
         $this->load->model('admin/usermodel','usm');
         $this->load->model('admin/kategorimodel','ktm');
     }
