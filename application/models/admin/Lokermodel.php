@@ -54,9 +54,9 @@ class Lokermodel extends CI_Model{
         return $this->db->update('lowongan',$data);
     }
     
-    public function hapusdata($cid)
+    public function hapusdata($lid)
     {
-        $this->db->where('cid',$cid);
-        return $this->db->delete('channel');
+        $this->db->where('lid',$lid);
+        return $this->db->delete('lowongan');
     }
 }

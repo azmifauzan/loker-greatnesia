@@ -11,8 +11,7 @@
 		
 		<div class="stat-holder">						
 			<div class="stat">							
-				<span><?php //echo $user->poin; ?></span>							
-				Total User							
+				Welcome Home						
 			</div> <!-- /stat -->						
 		</div> <!-- /stat-holder -->
 		

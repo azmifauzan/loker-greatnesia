@@ -1,15 +1,27 @@
+<!--
+website informasi lowongan pekerjaan http://loker.greatnesia.com
+Author : Fauzan Azmi
+email : azmifauzan@gmail.com
+last update : 160515
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <!-- Title and other stuffs -->
-  <title>Info Lowongan Kerja - Greatnesia.com</title>
+  <?php if(isset($title)) : ?>
+  	<title><?php echo $title; ?> - Greatnesia.com</title>
+  <?php else : ?>
+  	<title>Info Lowongan Kerja - Greatnesia.com</title>
+  <?php endif; ?>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
+  <meta name="description" content="informasi lowongan pekerjaan dari greatnesia.com">
+  <meta name="keywords" content="info,lowongan,pekerjaan,loker,pns,bumn,bank,it,engineer,oil,gas,tambang">
+  <meta name="author" content="Fauzan Azmi">
   <link rel="alternate" type="application/rss+xml" title="RSS Feed loker.greatnesia.com" href="<?php echo site_url('feed'); ?>" />
+
   <!-- Stylesheets -->
   <!-- Bootstrap -->
   <link href="<?php echo base_url('style/bootstrap.css'); ?>" rel="stylesheet">
